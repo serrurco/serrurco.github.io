@@ -12,13 +12,15 @@ function renderOutlookLinks() {
 
   // A second message can reuse this page through a hash-only navigation.
   // Remove old targets first so invalid or incomplete links cannot retain them.
-  for (const id of ['ios', 'windows', 'web']) {
+  for (const id of ['ios', 'windows', 'mac', 'web']) {
     const a = document.getElementById(id);
     a.hidden = true;
     a.removeAttribute('href');
   }
   document.getElementById('pc-note').hidden = true;
-  document.getElementById('intro').textContent = 'Choose the Outlook app on this device.';
+  document.getElementById('mac-note').hidden = true;
+  document.getElementById('intro').textContent = 'Choose how to open this message.';
+  let validWeb = false;
 
   function enable(id, href) {
     const a = document.getElementById(id);
@@ -43,10 +45,14 @@ function renderOutlookLinks() {
       safe.searchParams.set('ItemID', item);
       safe.searchParams.set('exvsurl', '1');
       safe.searchParams.set('viewmodel', 'ReadMessageItem');
+      // Mac has an explicitly labeled browser fallback, not an invented app URI.
+      enable('mac', safe.href);
+      document.getElementById('mac-note').hidden = false;
       enable('web', safe.href);
+      validWeb = true;
     }
   } catch (_) { /* No verified web fallback was provided. */ }
-  if (!validRest && !validEntry) {
+  if (!validRest && !validEntry && !validWeb) {
     document.getElementById('intro').textContent = 'This link is missing a valid message reference. Please request a fresh link.';
   }
 }

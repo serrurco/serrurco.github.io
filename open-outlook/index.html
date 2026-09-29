@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <meta name="referrer" content="no-referrer">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self'; connect-src 'none'; base-uri 'none'; form-action 'none'; object-src 'none'">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <title>Open in Outlook</title>
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <main>
+    <h1>Open in Outlook</h1>
+    <p id="intro">Choose the Outlook app on this device.</p>
+    <a class="app" id="ios" hidden>Outlook on iPhone or iPad</a>
+    <a class="app" id="windows" hidden>Classic Outlook on Windows</a>
+    <a class="web" id="web" hidden>Use Outlook in a browser</a>
+    <p class="note" id="pc-note" hidden>If Windows cannot open this link, its classic Outlook link handler needs one-time setup.</p>
+    <p class="note">If Telegram blocks opening Outlook, open this page in Safari or your default browser and tap the button again.</p>
+    <p class="note">This page does not load or display your email. Outlook still requires access to your mailbox.</p>
+  </main>
+  <script src="./app.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,10 @@
+:root { font: 17px/1.5 system-ui, sans-serif; color: #182b40; background: #f2f5f8; }
+    body { margin: 0; padding: 56px 22px; }
+    main { max-width: 440px; margin: auto; background: white; padding: 30px; border-radius: 18px; box-shadow: 0 8px 36px #182b4010; }
+    h1 { font-size: 28px; margin: 0 0 10px; }
+    p { margin: 0 0 22px; color: #586b7e; }
+    a { display: block; margin-top: 12px; padding: 13px 16px; border-radius: 9px; text-decoration: none; font-weight: 600; }
+    .app { background: #123957; color: white; }
+    .web { color: #123957; border: 1px solid #dbe3e9; }
+    .note { margin-top: 22px; font-size: 13px; }
+    [hidden] { display: none !important; }
